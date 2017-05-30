@@ -1,8 +1,20 @@
-<nav>
-  <a routerLink="login">Login</a>
-  <a routerLink="about">About</a>
-  <a routerLink="reports">Reports</a>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul *ngIf="isLogged" class="nav navbar-nav">
+        <li><a routerLink="reports">Reports</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a routerLink="login">Login</a></li>
+        <li *ngIf="isLogged"><a routerLink="login">Logout</a></li>
+        <li><a routerLink="about">About</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
+
+
+
 <div class="container">
   <router-outlet></router-outlet>
 </div>
